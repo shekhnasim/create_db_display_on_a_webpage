@@ -1,0 +1,15 @@
+
+.nok {
+    color: red;
+}
+th{
+    
+    position: sticky;
+    top: 0px;
+
+    background-color: teal;
+}
+
+th, td{
+    border: 1px solid black;
+}

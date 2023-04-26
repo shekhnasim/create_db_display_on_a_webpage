@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <h1>Site Details</h1>
+    <link rel="stylesheet" href="{% static 'app/css/style.css'%}"/>
+
+{% comment %} <style>
+    .nok {
+        color: red;
+    }
+</style> {% endcomment %}
+
+</head>
+<body>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Site Name</th>
+                <th>Cluster</th>
+                <th>Sector</th>
+                <th>CellName</th>
+                <th>Band</th>
+                <th>AntennaHeight</th>
+                <th>Azimuth</th>
+            </tr>
+            {% for site in sites %}
+            <tr>
+                <td>{{site.SiteName}}</td>
+                <td>{{site.Cluster}}</td>
+                <td>{{site.Sector}}</td>
+                <td>{{site.CellName}}</td>
+                <td class="{% if site.Band == 'G900' %}nok{% endif %}">{{site.Band}}</td>
+                <td>{{site.AntennaHeight}}</td>
+                <td>{{site.Azimuth}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
